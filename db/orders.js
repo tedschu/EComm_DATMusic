@@ -1,4 +1,4 @@
-// const { client } = require("./index");
+const { client } = require("./index");
 
 // Get all orders from orders table 
 async function getAllOrders() {
