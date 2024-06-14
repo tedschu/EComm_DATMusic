@@ -20,6 +20,7 @@ app.get(baseQuery, (req, res) => [
 app.use(baseQuery + "users", require("../api/users.js"));
 app.use(baseQuery + "products", require("./products.js"));
 app.use(baseQuery + "orders", require("./orders.js"));
+app.use(baseQuery + "orders_items", require("./order_items.js"));
 
 
 app.listen(8080, () => {
