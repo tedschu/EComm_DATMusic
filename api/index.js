@@ -18,9 +18,9 @@ app.get(baseQuery, (req, res) => [
 
 // Requiring each of our routes - UPDATE AS THESE ARE COMPLETED
 // app.use(baseQuery + "users", require("../users"));
-// app.use(baseQuery + "products", require("../products"));
-app.use(baseQuery + "orders", require("./orders.js"));
-// app.use(baseQuery + "order_items", require("../order_items"));
+app.use(baseQuery + "products", require("./products.js"));
+app.use(baseQuery + "orders", require("./orders.js));
+
 
 app.listen(8080, () => {
   console.log("App is running at port 8080");
