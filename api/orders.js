@@ -1,5 +1,5 @@
-const express = require("express");
-const router = express.Router();
+// const express = require("express");
+// const router = express.Router();
 
 const { getAllOrders, getOrdersByUser, getUserCart } = require('../db/orders');
 
