@@ -1,5 +1,5 @@
-// const express = require("express");
-// const router = express.Router();
+const express = require("express");
+const router = express.Router();
 
 const { getAllOrders, getOrdersByUser, getUserCart } = require('../db/orders');
 
@@ -40,4 +40,4 @@ router.get('/:user_id/cart', async (req, res, next) => {
 });
 
 
-// // module.exports = router;
+module.exports = router;
