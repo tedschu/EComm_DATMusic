@@ -1,6 +1,13 @@
 const { client } = require("./index");
 
-// // Export all functions here:
-// module.exports ={
+const getAllProducts = async () => {
+  const response = await client.query(
+    `SELECT * FROM products ORDER BY product_id ASC`
+  );
+  return response.rows;
+};
 
-// }
+// Export all functions here:
+module.exports = {
+  getAllProducts,
+};
