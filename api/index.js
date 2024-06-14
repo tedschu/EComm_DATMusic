@@ -19,7 +19,7 @@ app.get(baseQuery, (req, res) => [
 // Requiring each of our routes - UPDATE AS THESE ARE COMPLETED
 // app.use(baseQuery + "users", require("../users"));
 app.use(baseQuery + "products", require("./products.js"));
-app.use(baseQuery + "orders", require("./orders.js));
+app.use(baseQuery + "orders", require("./orders.js"));
 
 
 app.listen(8080, () => {
