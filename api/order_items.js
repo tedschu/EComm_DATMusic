@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 // grabbing functions from the db/order_items file
-const { getOrderItems, addToCart, removeFromCart } = require("../db/order_items");
+const { getCart, addToCart, removeFromCart } = require("../db/order_items");
 
 // Route that gets cart for a user
 router.get('/:order_items_id', async (req, res, next) => {
     try {
-        const cart = await getOrderItems(req.params.order_items_id);
+        const cart = await getCart(req.params.order_items_id);
         res.send({cart});
     } catch(err){
         next(err)
