@@ -39,7 +39,8 @@ async function createTables() {
         product_description text NOT NULL,
         product_category text NOT NULL,
         price integer NOT NULL,
-        image_url text
+        image_url text,
+        product_brand NOT NULL
     );
   
     CREATE TABLE orders (
