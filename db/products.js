@@ -28,13 +28,14 @@ const getSingleProduct = async (product_id) => {
 
 const addProduct = async (body) => {
   await client.query(
-    `INSERT INTO products(product_name, product_description, product_category, price, image_url) VALUES($1, $2, $3, $4, $5)`,
+    `INSERT INTO products(product_name, product_description, product_category, price, image_url, product_brand) VALUES($1, $2, $3, $4, $5, $6)`,
     [
       body.product_name,
       body.product_description,
       body.product_category,
       body.price,
       body.image_url,
+      body.product_brand,
     ]
   );
   return {
@@ -43,6 +44,7 @@ const addProduct = async (body) => {
     product_category: body.product_category,
     price: body.price,
     image_url: body.image_url,
+    product_brand: body.product_brand,
   };
 };
 
@@ -57,13 +59,14 @@ const deleteProduct = async (product_id) => {
 
 const updateProduct = async (product_id, body) => {
   const response = await client.query(
-    `UPDATE products SET product_name=$1, product_description=$2, product_category=$3, price=$4, image_url=$5 WHERE product_id=$6 RETURNING *`,
+    `UPDATE products SET product_name=$1, product_description=$2, product_category=$3, price=$4, image_url=$5, product_brand=$6 WHERE product_id=$7 RETURNING *`,
     [
       body.product_name,
       body.product_description,
       body.product_category,
       body.price,
       body.image_url,
+      body.product_brand,
       Number(product_id),
     ]
   );
@@ -73,6 +76,7 @@ const updateProduct = async (product_id, body) => {
     product_category: body.product_category,
     price: body.price,
     image_url: body.image_url,
+    product_brand: body.product_brand,
   };
 };
 
