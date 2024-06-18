@@ -3,10 +3,13 @@
 const express = require("express");
 const path = require("path");
 const { client } = require("../db/index.js");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
 client.connect();
+
+app.use(cors());
 
 const baseQuery = `/api/`;
 
