@@ -1,4 +1,5 @@
 const { client } = require("./index");
+const { addToCart, removeFromCart } = require("./order_items");
 const { addProduct } = require("./products");
 
 async function dropTables() {
@@ -229,13 +230,67 @@ async function createInitialProducts() {
   }
 }
 
+
+// async function createSeedUser() {
+//   try{
+//      await client.query(`
+//       INSERT INTO users (first_name, last_name, address, username, password)
+//       VALUES ($1, $2, $3, $4, $5);
+//       `, ["test", "test", "test", "username", "password"]);
+
+//   }catch(error){
+//     throw(error)
+//   }
+// }
+
+// async function createSeedOrder() {
+//   try{
+//      await client.query(`
+//       INSERT INTO orders (total_order_revenue, is_purchased, user_id)
+//       VALUES ($1, $2, $3);
+//       `, ["0", false, 1]);
+
+//   }catch(error){
+//     throw(error)
+//   }
+
+// }
+
+// async function createTestCart() {
+//   try {
+//     await addToCart({
+//       order_id: 1,
+//       product_id: 1,
+//       order_items_quantity: 1,
+//     });
+//     await addToCart({
+//       order_id: 1,
+//       product_id: 2,
+//       order_items_quantity: 2,
+//     });
+//     // await removeFromCart({
+//     //   order_id: 1,
+//     //   product_id: 2,
+//     // });
+
+//     console.log("Finished creating test cart!")
+//   } catch (error) {
+//     console.log("Error creating test cart!");
+//     throw error;
+//   }
+// }
+
 async function rebuildDB() {
   try {
     client.connect();
     await dropTables();
     await createTables();
+      
     // await createInitialUsers();
     await createInitialProducts();
+      // await createSeedUser();
+      // await createSeedOrder();
+      // await createTestCart();
   } catch (error) {
     console.log("Error during rebuildDB");
     throw error;
