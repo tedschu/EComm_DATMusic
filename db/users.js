@@ -44,6 +44,16 @@ const loginUser = async (username, password) => {
 };
 
 
+// find the loggged in user 
+
+const getUserByUsername = async (username) => {
+  const response = await client.query(
+      `SELECT * FROM users WHERE username = $1`,
+      [username]
+  );
+  return response.rows[0];
+};
+
 
 // // Export all functions here:
 module.exports ={
@@ -51,5 +61,6 @@ module.exports ={
         getSingleUser,  
         createUser,
         loginUser, 
+        getUserByUsername,
         client, 
 }
