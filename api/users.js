@@ -45,7 +45,7 @@ router.get("/", async (req, res, next) => {
 
   router.get("/me", verifyToken, async (req, res, next) => {
     try {
-        const user = await getUserByUsername(req.user.username); // Assuming username is stored in req.user from verifyToken middleware
+        const user = await getUserByUsername(req.user.username);
         if (user) {
             res.send(user);
         } else {
