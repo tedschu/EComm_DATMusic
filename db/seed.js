@@ -223,13 +223,69 @@ async function createInitialProducts() {
       product_brand: "arturia",
     });
 
+    await addProduct({
+      product_name:
+        "Gibson Custom 1959 Les Paul Standard Reissue VOS - Washed Cherry Sunburst",
+      product_description:
+        "The 1959 Les Paul is known in musician circles as the Holy Grail of Guitars, and thanks to this spot-on reproduction, you can have one of your very own. This Gibson Custom 1959 Les Paul Standard Reissue VOS is built from heavenly tonewoods, including a solid mahogany body, beautiful figured maple top, and Indian rosewood fingerboard. Inject your playing with authentic PAF tones, courtesy of CustomBucker pickups and a handwired harness with paper-in-oil capacitors. This true-to-life re-creation also boasts hide-glue construction, a long neck tenon, and vintage-style Kluson tuners. A gorgeous thin VOS nitrocellulose lacquer finish completes this 1959 Les Paul Standard Reissue.",
+      product_category: "guitars",
+      price: 6699,
+      image_url:
+        "https://media.sweetwater.com/api/i/q-82__h-750__f-webp__ha-d41ad875f4174b0b__hmac-ecc7a0a0a85f94d6279129620d8ed4552854dd44/images/guitars/LPR59VOWCSNH/94338/94338-body-large.jpg.auto.webp",
+      product_brand: "gibson",
+    });
+
+    await addProduct({
+      product_name: "Yamaha Reface CP Electric Piano Synthesizer",
+      product_description:
+        "At Sweetwater, we've used just about every keyboard on the planet, going way back to the '70s. That's why we're so excited about the Yamaha Reface CP mobile mini keyboard. Inspired by the iconic keyboards of yesteryear, the Reface CP puts a contemporary reimagining of the legendary Yamaha CP80 electric grand piano right at your fingertips. In addition to classic combo piano sounds, the Reface CP's Vintage Keyboard Sound Engine also provides you with six incredibly detailed vintage keyboard types including Tine, Reed, Clavi, and Toy electric pianos. You also get five stompbox-style effects with direct control, so you don't need to run the Reface CP through pedals like back in the day. Grab a Yamaha Reface CP mobile mini keyboard and take a trip down memory lane!",
+      product_category: "pianos",
+      price: 449,
+      image_url:
+        "https://media.sweetwater.com/m/products/image/e3272ae5c4AFITsxEqEPfMOu43D66rJBPUZcLq7W.jpg?quality=82&width=750&ha=e3272ae5c4ee48f4",
+      product_brand: "yamaha",
+    });
+
+    await addProduct({
+      product_name:
+        "DW Collector's Series Maple/Mahogany 7-piece Shell Pack - Satin Regal Blue",
+      product_description:
+        "This DW Collector's Series maple/mahogany 7-piece shell pack has all the articulation of DW's transcendent maple shells, paired with additional plies of mahogany for unequaled warmth and resonance. Boasting exceptional craftsmanship, Collector's Series drums not only sound incredible, they also give you looks to match. DW pulled out all the stops on the Collector's Series, utilizing all of their tone-enhancing innovations and options. This DW Collector's Series maple/mahogany 7-piece shell pack gives you the punch and full-range sound you want from your drum kit. The DW Collector's Series has been enormously popular here at Sweetwater, and we're sure that this maple mahogany shell pack will exceed your expectations!",
+      product_category: "drums",
+      price: 7444,
+      image_url:
+        "https://media.sweetwater.com/m/products/image/58cc72a1f00FCjRhMl1cYF2UHnxUOZzSnSrnu2Am.jpg?quality=82&width=750&ha=58cc72a1f0c06820",
+      product_brand: "DW",
+    });
+
+    await addProduct({
+      product_name: "Fender Jimmy Page Telecaster - Natural with Artwork",
+      product_description:
+        "On January 31, 1969, Led Zeppelin played New York's Fillmore East for the first time. Their debut album had just been released, and the Big Apple was abuzz with the promise of this hot new British group. But they were as yet untested before an American audience, so Fillmore impresario Bill Graham booked them as the opening act for Iron Butterfly. Their first set that evening killed, tearing up the house so thoroughly that Iron Butterfly refused to go on after them again. So Led Zeppelin headlined the 11:30 show — never again to be an opening act. Jimmy Page played his Tele that night — the one he famously used on the first album, and quite frequently thereafter — sending shock waves into the audience with every strike of his pick and violin bow. Now Sweetwater is thrilled to present to you the Fender Jimmy Page Telecaster, a superb re-creation of this legendary instrument in all its glory.",
+      product_category: "guitars",
+      price: 1649,
+      image_url:
+        "https://media.sweetwater.com/api/i/q-82__h-750__f-webp__ha-0d312518ab611a43__hmac-66290f266f58856e5e992ecf2e8f8c6488b92ada/images/guitars/TeleJPDrgn/MXN05711/MXN05711-body-large.jpg.auto.webp",
+      product_brand: "fender",
+    });
+
+    await addProduct({
+      product_name: "G&L Fullerton Deluxe S-500 Electric Guitar - Andromeda",
+      product_description:
+        "Debuting in 1982, the S-500 stands as one of the most celebrated instruments in G&L's rich history. The G&L Fullerton Deluxe S-500 honors that legacy and bands together time-honored options from the G&L Option Order menu to put an astonishing instrument in your hands. The Fullerton Deluxe S-500 starts with an alder body that flaunts its traditional double-cutaway contours. Next, a bolt-on maple neck serves as a comfortable fretting field for soulful solos and chunky chords alike, and a gorgeous Caribbean rosewood fingerboard tops off these tonewoods with player-centric style. You'll also find classic S-500 innovations like a Dual-Fulcrum vibrato, Magnetic Field Design pickups, and the P.T.B. tone system that originally put this guitar on the map. Enjoy the ultimate S-500 sonic experience and grab one of these audacious axes from Sweetwater today!",
+      product_category: "guitars",
+      price: 1949,
+      image_url:
+        "https://media.sweetwater.com/api/i/q-82__h-750__f-webp__ha-5780c410e4da600d__hmac-81963ac9c892580b793af094c043fe96088307b8/images/guitars/S500FAdm/CLF2403073/CLF2403073-body-large.jpg.auto.webp",
+      product_brand: "G&L",
+    });
+
     console.log("Finished creating posts!");
   } catch (error) {
     console.log("Error creating posts!");
     throw error;
   }
 }
-
 
 // async function createSeedUser() {
 //   try{
@@ -285,12 +341,12 @@ async function rebuildDB() {
     client.connect();
     await dropTables();
     await createTables();
-      
+
     // await createInitialUsers();
     await createInitialProducts();
-      // await createSeedUser();
-      // await createSeedOrder();
-      // await createTestCart();
+    // await createSeedUser();
+    // await createSeedOrder();
+    // await createTestCart();
   } catch (error) {
     console.log("Error during rebuildDB");
     throw error;
